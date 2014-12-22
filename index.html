@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="game">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <div ng-controller="GameCardsCtrl" class="container">
+      <div class="row card-field" ng-repeat="i in cards.range()">
+        <div ng-repeat="card in cards.slice(i,i+4)">
+          <div ng-click="openCard(card.id, card.idUnic)" ng-class="{closed:!card.clicked, opened:card.clicked, flipOutY:card.clicked}" ng-style="{'background': card.color}" class="col-xs-3 card">
+            <span ng-class="{'glyphicon {{card.value}}':card.clicked}"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row control-field">
+        <div>
+          <a href=""><img class="no-left-padding no-right-padding col-xs-6 img-responsive" src="images/everlabs_logo.png" alt=""/></a>
+        </div>
+        <div class="no-left-padding col-xs-6">
+          <ul class="control-panel">
+            <li class="col-xs-2"><a href=""><span ng-click="reInitCards()" class="glyphicon glyphicon-refresh"></span></a></li>
+            <li class="col-xs-2"><a href=""><span ng-click="removeCards()" class="glyphicon glyphicon-minus"></span></a></li>
+            <li class="col-xs-2"><a href=""><span ng-click="addCards()" class="glyphicon glyphicon-plus"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--modal begin-->
+      <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+          <h3 class="modal-title">You WIN!</h3>
+        </div>
+        <div class="modal-body">
+          In {{modalData}} steps
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="ok()">OK</button>
+        </div>
+      </script>
+      <!--modal end-->
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-0.11.2.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+/*----------------------------------------------------------------------------------*/
+/*------------------------------RESET DEFAULT STYLES--------------------------------*/
+/*----------------------------------------------------------------------------------*/
+html,body                       { width:100%; height:100%; }
+body                            { padding:0; margin:0; font:12px Tahoma, sans-serif; background: url("../images/skulls.png"); color:#000; }
+div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,checkbox,input,textarea {
+	padding:0;
+	margin:0;
+	outline:none;
+	list-style:none;
+}
+select, input, textarea        { font-size:12px; vertical-align:middle; }
+textarea                       { vertical-align:top; }
+:focus                         { outline:none; }
+input[type=submit]             { cursor:pointer; }
+img, fieldset                  { border:0; }
+table                          { border-collapse:collapse; border-spacing:0; }
+a:link, a:visited              { font:12px Tahoma, sans-serif; color:#000; text-decoration:underline; }
+a:hover                        { text-decoration:none; }
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------CONTENT--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .container {
+    width: 320px;
+  }
+  .card {
+    height: 100px;
+    line-height: 100px;
+    font-size: 25px;
+  }
+  .control-panel ul li {
+    line-height: 55px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 670px;
+  }
+  .card {
+    height: 200px;
+    line-height: 200px;
+    font-size: 50px;
+  }
+  .control-panel ul li {
+    line-height: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 670px;
+  }
+  .card {
+    height: 200px;
+    line-height: 200px;
+    font-size: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 670px;
+  }
+  .card {
+    height: 200px;
+    line-height: 200px;
+    font-size: 50px;
+  }
+}
+.container {
+  padding-bottom: 50px;
+}
+.card {
+  width: 23%;
+  margin: 1%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -ms-transition: -ms-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border: 3px solid #C1C1C1;
+  border-radius: 3px;
+}
+.card.closed {
+  background: url("../images/sativa.png") !important;
+  background-size: 100% 100% !important;
+}
+.card.opened {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(255,194,179, 1);
+  -moz-box-shadow:    1px 1px 1px 1px rgba(255,194,179, 1);
+  box-shadow:         0px 0px 5px 1px rgba(255,194,179, 1);
+  border-color: #FFFFFF;
+}
+.card .glyphicon {
+  color: #fff;
+}
+.no-right-padding {
+  padding-right: 0 !important;
+}
+.no-left-padding {
+  padding-left: 0 !important;
+}
+.control-field {
+  position: fixed;
+  bottom: 0;
+}
+ul.control-panel li {
+  display: inline;
+  margin: 0 13% 0 0;
+  max-width: 100%;
+  height: auto;
+  /*float: right;*/
+}
+ul.control-panel li .glyphicon {
+  color: #007ACB;
+  font-size: 2em;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------SIDEBAR--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------FOOTER---------------------------------------*/
+/*----------------------------------------------------------------------------------*/
